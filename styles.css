@@ -1,7 +1,226 @@
 body {
     background-color: black;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
-p {
-    color: red;
+header img {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 10vw;
+
+    opacity: 0.7;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically centers items */
+
+    margin-bottom: 250px;
+}
+
+.slogan-container {
+    flex: 1; /* Allows the slogan to take available space */
+    text-align: center; /* Aligns text to the right */
+    padding-right: 20px; /* Adds space between text and image */
+}
+
+.slogan {
+    color: white;
+    margin: 0; /* Removes default margin on <h1> */
+    line-height: 1.2; /* Adjusts spacing between lines */
+
+    font-size: 3vw;
+}
+
+.image-container img {
+    max-width: 100%; /* Ensures image stays within its container */
+    height: auto;
+}
+
+
+
+
+
+
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.image-container img {
+    display: block;
+    width: 40vw; /* Adjust size as needed */
+    height: auto;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Stronger corner fade and softer side fade */
+    background: 
+        radial-gradient(circle, transparent 60%, black 90%), /* Corners */
+        linear-gradient(to top, transparent 80%, black 100%), /* Bottom to top */
+        linear-gradient(to bottom, transparent 80%, black 100%), /* Top to bottom */
+        linear-gradient(to left, transparent 80%, black 100%), /* Right to left */
+        linear-gradient(to right, transparent 80%, black 100%); /* Left to right */
+    pointer-events: none; /* Ensure overlay doesn't block interaction */
+}
+
+
+
+
+
+
+
+
+
+
+
+#carousel {
+    position: relative; /* Allows child elements with absolute positioning to align within this container */
+    height: 400px; /* Sets a fixed height for the carousel */
+    top: 50%; /* Moves the carousel down by 50% of its container height for vertical centering */
+    transform: translateY(-50%); /* Pulls the carousel up by 50% of its own height to achieve true centering */
+    overflow: hidden; /* Hides any part of the images that go beyond the carousel bounds */
+}
+
+#carousel div {
+    position: absolute; /* Positions each image absolutely within the carousel container */
+    transition: transform 400ms, left 400ms, opacity 400ms, z-index 0s; /* Smoothly transitions changes in position, opacity, and depth */
+    opacity: 1; /* Sets default opacity to fully visible */
+}
+
+#carousel div img {
+    width: 400px; /* Sets a fixed width for each image */
+    transition: width 400ms; /* Smoothly animates width changes, especially in hover states */
+    -webkit-user-drag: none; /* Disables image dragging for a cleaner carousel experience */
+}
+
+/* Styling for the leftmost hidden image */
+#carousel div.hideLeft {
+    left: 0%; /* Positions image at the far left of the carousel */
+    opacity: 0; /* Makes it invisible */
+    transform: translateY(50%) translateX(-50%); /* Slightly shifts it down and left */
+}
+
+#carousel div.hideLeft img {
+    width: 200px; /* Reduces image size for a smaller, hidden appearance */
+}
+
+/* Styling for the rightmost hidden image */
+#carousel div.hideRight {
+    left: 100%; /* Positions image at the far right of the carousel */
+    opacity: 0; /* Makes it invisible */
+    transform: translateY(50%) translateX(-50%); /* Slightly shifts it down and right */
+}
+
+#carousel div.hideRight img {
+    width: 200px; /* Reduces image size for a smaller, hidden appearance */
+}
+
+/* Styling for the previous image in the sequence */
+#carousel div.prev {
+    z-index: 5; /* Brings it slightly above the other layers */
+    left: 30%; /* Positions it at 30% from the left of the container */
+    transform: translateY(50px) translateX(-50%); /* Adds a subtle offset to indicate depth */
+}
+
+#carousel img:hover {
+    cursor: pointer; /* Adds a pointer cursor on hover */
+}
+
+#carousel div.prev img {
+    width: 300px; /* Makes the image slightly smaller than the main image */
+}
+
+/* Styling for the second-to-last previous image */
+#carousel div.prevLeftSecond {
+    z-index: 4; /* Sits just below the previous image */
+    left: 15%; /* Positions it further to the left */
+    transform: translateY(50%) translateX(-50%); /* Adds a vertical offset */
+    opacity: 0.7; /* Slightly reduces visibility */
+}
+
+#carousel div.prevLeftSecond img {
+    width: 200px; /* Reduces size to indicate distance */
+}
+
+/* Styling for the currently selected image */
+#carousel div.selected {
+    z-index: 10; /* Places it above all other images */
+    left: 50%; /* Centers it horizontally */
+    transform: translateY(0px) translateX(-50%); /* Centers it without additional offsets */
+}
+
+/* Styling for the next image in the sequence */
+#carousel div.next {
+    z-index: 5; /* Places it above lower layers but below the selected image */
+    left: 70%; /* Positions it to the right of the selected image */
+    transform: translateY(50px) translateX(-50%); /* Adds offset to indicate depth */
+}
+
+#carousel div.next img {
+    width: 300px; /* Makes it slightly smaller than the main image */
+}
+
+/* Styling for the second-to-next image */
+#carousel div.nextRightSecond {
+    z-index: 4; /* Places it below the next image */
+    left: 85%; /* Positions it further to the right */
+    transform: translateY(50%) translateX(-50%); /* Adds vertical offset */
+    opacity: 0.7; /* Reduces visibility */
+}
+
+#carousel div.nextRightSecond img {
+    width: 200px; /* Reduces size to indicate distance */
+}
+
+/* Button container styling */
+.buttons{
+    transform: translate(0px, -150px);
+    text-align: center;
+}
+
+.arrow-button {
+    background: none;       /* Removes button background */
+    border: none;           /* Removes button border */
+    padding: 0;             /* Removes button padding */
+    cursor: pointer;        /* Shows a pointer cursor on hover */
+    outline: none;          /* Removes outline on focus */
+}
+
+.arrow-button img {
+    width: 50px;            /* Sets image width */
+    height: auto;           /* Maintains image aspect ratio */
+    filter: brightness(1.5);
+}
+
+.arrow-button:hover img {
+    filter: brightness(3); /* Lightens image on hover */
+    transform: scale(1.05);  /* Slightly enlarges image on hover */
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.arrow-button-left {
+    margin-right: 200px; /* Adds 20px space to the right of the left arrow */
+}
+
+.arrow-button-right {
+    margin-left: 200px; /* Adds 20px space to the left of the right arrow */
+}
+
+.arrow-button-left img, .arrow-button-left:hover img{
+    transform: rotate(-90deg);
+}
+.arrow-button-right img, .arrow-button-right:hover img{
+    transform: rotate(90deg);
 }

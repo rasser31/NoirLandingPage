@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noir</title>
+    <link rel="icon" type="image/x-icon" href=".\images\Logo-Circle.png" />
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <p>css test</p>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo-wide.png" alt="" />
+    </header>
+    <div class="flex-container">
+      <div class="slogan-container">
+        <h1 class="slogan">In the midnight of time,</h1>
+        <h1 class="slogan">style drifts endlessly</h1>
+      </div>
+      <div class="image-container">
+        <img src="./images/road.gif" alt="Road.gif" />
+      </div>
+    </div>
 
+    <div id="carousel" class="carousel">
+      <div id="item_2" class="prevLeftSecond">
+        <img src="./images/shirt5.png" />
+      </div>
 
+      <div id="item_3" class="prev">
+        <img src="./images/shirt3.png" />
+      </div>
+
+      <div id="item_4" class="selected">
+        <img src="./images/shirt1.png" />
+      </div>
+
+      <div id="item_5" class="next">
+        <img src="./images/shirt2.png" />
+      </div>
+
+      <div id="item_6" class="nextRightSecond">
+        <img src="./images/shirt4.png" />
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="arrow-button arrow-button-left" role="button" id="prev">
+        <img
+          src="./images/reshot-icon-arrow-ZYWPF64C3H.svg"
+          alt="Arrow Button"
+        />
+      </button>
+      <button class="arrow-button arrow-button-right" role="button" id="next">
+        <img
+          src="./images/reshot-icon-arrow-ZYWPF64C3H.svg"
+          alt="Arrow Button"
+        />
+      </button>
+    </div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

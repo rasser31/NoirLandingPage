@@ -2,12 +2,17 @@ body {
     background-color: black;
     margin-left: 10vw;
     margin-right: 10vw;
+
+    font-family: "Gideon Roman", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header img {
     margin-left: 10vw;
     margin-right: 10vw;
     width: 10vw;
+    margin-top: 10px;
 
     opacity: 0.7;
 }
@@ -32,6 +37,7 @@ header img {
     line-height: 1.2; /* Adjusts spacing between lines */
 
     font-size: 3vw;
+    text-shadow: 5px 5px 3px #750000;
 }
 
 .image-container img {
@@ -223,4 +229,33 @@ header img {
 }
 .arrow-button-right img, .arrow-button-right:hover img{
     transform: rotate(90deg);
+}
+
+.buy-container{
+    text-align: center; /* Moves the button to the middle of the screen */
+    margin-bottom: 100px;
+}
+
+.buynow-button{
+    font-family: "Gideon Roman", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;        /* Shows a pointer cursor on hover */
+
+    background-color: rgb(61, 61, 61);
+    border: solid white 2px;   
+    border-radius: 26px;
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+
+
+.product-details{
+    height: 300px;
 }
